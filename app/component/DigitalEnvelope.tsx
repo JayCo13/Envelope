@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
 export default function DigitalEnvelope() {
@@ -12,7 +12,7 @@ export default function DigitalEnvelope() {
     };
 
     // Animation Variants
-    const flapVariants = {
+    const flapVariants: Variants = {
         closed: {
             rotateX: 0,
             zIndex: 30,
@@ -25,7 +25,7 @@ export default function DigitalEnvelope() {
         }
     };
 
-    const cardVariants = {
+    const cardVariants: Variants = {
         closed: {
             y: 0,
             scale: 0.95,
@@ -41,7 +41,7 @@ export default function DigitalEnvelope() {
             transition: {
                 delay: 0.4,
                 duration: 1,
-                type: "spring",
+                type: 'spring' as const,
                 stiffness: 40,
                 damping: 12
             }
